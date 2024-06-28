@@ -5,6 +5,7 @@ import asyncio
 from colorama import init, Fore, Back, Style
 import json
 import sys
+import time
 init()
 
 colors = [Fore.LIGHTWHITE_EX, Fore.WHITE]
