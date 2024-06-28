@@ -70,7 +70,7 @@ def payload_():
         "votes": asf
         # "votes": [None] * 382 + [11]
     }
-    print(payload['votes'])
+
     return payload
 
 async def main(num_requests):
@@ -110,13 +110,22 @@ async def main(num_requests):
                 await req(client, url, headers, payload, request_count, payload['name'], payload['email'])
                 request_count += 1
 
+def is_int(s):
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
 if __name__ == "__main__":
     num_requests = input("Number of requests in each batch (or 'infinite' to run indefinitely): ")
+    
     if num_requests.lower() == 'infinite':
         num_requests = float('inf')
-    elif type(num_requests) == int:
+    elif is_int(num_requests):
         num_requests = int(num_requests)
     else:
-        print('not an input')
+        print('Invalid input. Please enter a number or "infinite".')
         sys.exit()
+    
     asyncio.run(main(num_requests))
