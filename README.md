@@ -1,4 +1,4 @@
-# esportsawards
+# esportsawards automated voting script
 Website  - https://esportsawards.com
 
 automated voting script in python
