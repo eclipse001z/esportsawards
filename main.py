@@ -125,7 +125,9 @@ if __name__ == "__main__":
     elif is_int(num_requests):
         num_requests = int(num_requests)
     else:
-        print('Invalid input. Please enter a number or "infinite".')
-        sys.exit()
+        print('invalid input, defaulting to infinite) # not a number or "infinite", defaults to infinite
+        time.sleep(1)
+        num_requests = float('inf')
+        # sys.exit()
     
     asyncio.run(main(num_requests))
