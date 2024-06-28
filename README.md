@@ -21,6 +21,7 @@ cd C:\Users\John\Downloads\esportsawards-main\esportsawards-main
 
 2:
 run 
+
 pip install -r requirements.txt
 
 # Tutorial
